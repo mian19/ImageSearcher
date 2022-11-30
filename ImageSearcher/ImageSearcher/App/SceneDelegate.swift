@@ -14,21 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-               let navController = UINavigationController()
-               coordinator = AppCoordinator(navigationController: navController)
-               window = UIWindow(windowScene: windowScene)
-               
-               
-               if ImageFileManager.shared.retrieveImage(forKey: "profileImage") != nil {
-                   let storyboard = UIStoryboard(name: "ProfileMenuTabBarController", bundle: .main)
-                   let viewController = storyboard.instantiateInitialViewController() as! ProfileMenuTabBarController
-                   window?.rootViewController = viewController
-               } else {
-                   coordinator?.toRegistrationScreen()
-                   window?.rootViewController = navController
-               }
- 
-               window?.makeKeyAndVisible()
+        let navController = UINavigationController()
+        coordinator = AppCoordinator(navigationController: navController)
+        coordinator?.start()
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
     }
     
 }
