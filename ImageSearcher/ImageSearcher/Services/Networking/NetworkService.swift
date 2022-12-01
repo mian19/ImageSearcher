@@ -8,10 +8,11 @@
 import Foundation
 
 class NetworkService {
-    
+
     func request(searchTags: String, sortBy: String = "relevance", pageNumber: Int, completion: @escaping (Data?, Error?) -> Void ) {
         let parameters = self.prepareParameters(searchTags: searchTags, sortBy: sortBy, pageNumber: pageNumber)
         let url = self.url(params: parameters)
+        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "get"
         let task = createDataTask(from: request, completion: completion)
@@ -25,7 +26,7 @@ class NetworkService {
         parameters["format"] = "json"
         parameters["nojsoncallback"] = "1"
         parameters["extras"] = "date_taken,tags,url_q,url_z"
-        parameters["per_page"] = "30"
+        parameters["per_page"] = "16"
         parameters["tag_mode"] = "all"
         parameters["tags"] = searchTags
         parameters["page"] = "\(pageNumber)"
