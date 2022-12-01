@@ -28,11 +28,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         setViews()
         bindViewModel()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .medium)]
+        title = "Flickr Client"
+
     }
     
     private func setViews() {
         view.backgroundColor = UIColor.init(rgb: 0x0e0e0e)
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(focus)))
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(focus))
+        recognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(recognizer)
         
         setTagTextField()
         setAddTagButton()
@@ -122,12 +127,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     private func setImagesCollectionView() {
         imagesCollectionView = ImagesCollectionView()
         view.addSubview(imagesCollectionView)
-        imagesCollectionView.delegate = self
+        imagesCollectionView.vcDelegate = self
         
         imagesCollectionView.topAnchor.constraint(equalTo: tagsCollectionView.bottomAnchor, constant: 10).isActive = true
         imagesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         imagesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        imagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        imagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 20).isActive = true
     }
     
     //MARK: - Bindings

@@ -27,16 +27,11 @@ struct Photo: Codable {
     let tags: String
     let urlQ: String?
     let urlZ: String?
-   // let heightZ, widthZ: Int
 
     enum CodingKeys: String, CodingKey {
         case id, owner, secret, server, title, datetaken, tags
         case urlQ = "url_q"
-      //  case heightQ = "height_q"
-       // case widthQ = "width_q"
         case urlZ = "url_z"
-      //  case heightZ = "height_z"
-      //  case widthZ = "width_z"
     }
 }
 

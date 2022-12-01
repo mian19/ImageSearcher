@@ -12,7 +12,6 @@ class NetworkService {
     func request(searchTags: String, sortBy: String = "relevance", pageNumber: Int, completion: @escaping (Data?, Error?) -> Void ) {
         let parameters = self.prepareParameters(searchTags: searchTags, sortBy: sortBy, pageNumber: pageNumber)
         let url = self.url(params: parameters)
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "get"
         let task = createDataTask(from: request, completion: completion)

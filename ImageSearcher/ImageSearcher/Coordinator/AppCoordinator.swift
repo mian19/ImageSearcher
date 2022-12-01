@@ -19,14 +19,15 @@ class AppCoordinator: CoordinatorProtocol {
         let vc = MainViewController()
         vc.coordinator = self
         vc.viewModel = MainViewModel()
-        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func toBigPhotoVC() {
+    func toBigPhotoVC(bigURLString: String) {
         let vc = BigPhotoViewController()
         vc.coordinator = self
         vc.viewModel = BigPhotoViewModel()
+        guard let url = URL(string: bigURLString) else { return }
+        vc.viewModel?.setImage(url: url)
         navigationController.pushViewController(vc, animated: true)
     }
     

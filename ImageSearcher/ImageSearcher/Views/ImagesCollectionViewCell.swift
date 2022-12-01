@@ -15,7 +15,7 @@ class ImagesCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.isUserInteractionEnabled = false
         return imageView
     }()
@@ -41,8 +41,8 @@ class ImagesCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         layer.cornerRadius = 15
         clipsToBounds = true
-      //  setPhotoImageView()
-       // setTextView()
+        setPhotoImageView()
+        setTextView()
     }
     
     private func setPhotoImageView() {

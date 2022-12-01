@@ -56,7 +56,9 @@ class ImagesCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        guard let photoStr = vcDelegate.viewModel.photosWithInfo.value[indexPath.row].urlZ else { return }
+        vcDelegate.coordinator?.toBigPhotoVC(bigURLString: photoStr)
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
