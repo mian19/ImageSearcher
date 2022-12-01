@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDelegate {
 
-    var viewModel: MainViewModel?
+    var viewModel: MainViewModel!
     weak var coordinator: AppCoordinator?
     
     var addTagButton: UIButton!
@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     var sortButton: UIButton!
     var trashButton: UIButton!
     var tagsCollectionView: TagsCollectionView!
-    var imagesCollectionView: UICollectionView!
+    var imagesCollectionView: ImagesCollectionView!
     var sortPickerView: UIPickerView!
     var sortView: SortView!
     var blurEffectView: UIVisualEffectView!
@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         setSortButton()
         setTrashButton()
         setTagsCollectionView()
+        setImagesCollectionView()
     }
     
     private func setTagTextField() {
@@ -118,6 +119,17 @@ class MainViewController: UIViewController {
         tagsCollectionView.trailingAnchor.constraint(equalTo: trashButton.leadingAnchor, constant: -10).isActive = true
     }
     
+    private func setImagesCollectionView() {
+        imagesCollectionView = ImagesCollectionView()
+        view.addSubview(imagesCollectionView)
+        imagesCollectionView.delegate = self
+        
+        imagesCollectionView.topAnchor.constraint(equalTo: tagsCollectionView.bottomAnchor, constant: 10).isActive = true
+        imagesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        imagesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        imagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
     //MARK: - Bindings
     
     func bindViewModel() {
@@ -147,6 +159,12 @@ class MainViewController: UIViewController {
                 }
             }
         })
+        
+        viewModel?.photosWithInfo.bind({ (photosWithInfo) in
+            DispatchQueue.main.async {
+                self.imagesCollectionView.reloadData()
+            }
+        })
     }
     
     //MARK: - Actions
@@ -173,6 +191,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func onSearchButton() {
+        viewModel.searchButtonPressed()
         focus()
     }
     
