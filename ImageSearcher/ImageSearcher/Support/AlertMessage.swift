@@ -12,4 +12,5 @@ enum AlertMessage: String {
     case alredyTag = "This tag alredy added"
     case emptyTag = "Tag can't be empty"
     case emptyResult = "Try to use another tags"
+    case needAddTag = "Please select at least 1 tag first"
 }

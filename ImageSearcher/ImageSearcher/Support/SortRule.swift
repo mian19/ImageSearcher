@@ -12,8 +12,8 @@ enum SortRule: String, CaseIterable {
     case relevance = "Relevance"
     case dateTakenNewest = "Newest by date"
     case dateTakenOldest = "Oldest by date"
-    case interestingNewest = "Newest interesting"
-    case interestingOldest = "Oldest interesting"
+    case interestingNewest = "More popular"
+    case interestingOldest = "Less popular"
 }
 
 extension SortRule {
@@ -23,9 +23,9 @@ extension SortRule {
         case .relevance:
             returnValue = "relevance"
         case .dateTakenNewest:
-            returnValue = "date-taken-asc"
-        case .dateTakenOldest:
             returnValue = "date-taken-desc"
+        case .dateTakenOldest:
+            returnValue = "date-taken-asc"
         case .interestingNewest:
             returnValue = "interestingness-asc"
         case .interestingOldest:
