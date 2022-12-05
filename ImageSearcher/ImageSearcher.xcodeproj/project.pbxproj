@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67173BEE2935FC1A005A3438 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67173BED2935FC1A005A3438 /* MainViewModel.swift */; };
 		67173BF12935FC61005A3438 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67173BF02935FC61005A3438 /* Dynamic.swift */; };
 		67173C1B29365216005A3438 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67173C1A29365215005A3438 /* SearchResult.swift */; };
 		67173C1F29365261005A3438 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67173C1E29365261005A3438 /* NetworkService.swift */; };
@@ -34,10 +33,10 @@
 		67E9DBD1293544AE00D9522E /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9DBD0293544AE00D9522E /* CoordinatorProtocol.swift */; };
 		67E9DBD32935452100D9522E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9DBD22935452100D9522E /* AppCoordinator.swift */; };
 		67E9DBD529354CED00D9522E /* BigPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E9DBD429354CED00D9522E /* BigPhotoViewController.swift */; };
+		67EACF82293DF12B007969F1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EACF81293DF12B007969F1 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		67173BED2935FC1A005A3438 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = ../../../../../../../../Applications/MainViewModel.swift; sourceTree = "<group>"; };
 		67173BF02935FC61005A3438 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		67173C1A29365215005A3438 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		67173C1E29365261005A3438 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		67E9DBD0293544AE00D9522E /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		67E9DBD22935452100D9522E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		67E9DBD429354CED00D9522E /* BigPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPhotoViewController.swift; sourceTree = "<group>"; };
+		67EACF81293DF12B007969F1 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				67173BEF2935FC4F005A3438 /* Bindings */,
-				67173BED2935FC1A005A3438 /* MainViewModel.swift */,
 				67173C222936A6F1005A3438 /* BigPhotoViewModel.swift */,
+				67EACF81293DF12B007969F1 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,9 +299,9 @@
 				6721A57429380A8A00CFF647 /* UILabel+customLabel.swift in Sources */,
 				67173C1F29365261005A3438 /* NetworkService.swift in Sources */,
 				6721A57629381EB300CFF647 /* ImagesCollectionView.swift in Sources */,
-				67173BEE2935FC1A005A3438 /* MainViewModel.swift in Sources */,
 				67173C282936AF15005A3438 /* TagTextField.swift in Sources */,
 				67173C1B29365216005A3438 /* SearchResult.swift in Sources */,
+				67EACF82293DF12B007969F1 /* MainViewModel.swift in Sources */,
 				6721A5722937DD5C00CFF647 /* AlertMessage.swift in Sources */,
 				6721A56E29376AC300CFF647 /* SortView.swift in Sources */,
 				67173C2129365267005A3438 /* NetworkDataFetcher.swift in Sources */,
